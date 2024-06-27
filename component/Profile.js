@@ -12,12 +12,12 @@ import {
 } from 'react-native-heroicons/outline';
 import {Image} from 'react-native-animatable';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const [open, setopen] = useState(false);
   return (
     <View className="flex flex-1 bg-primary">
       <View className="flex-row my-4 justify-between mx-4">
-        <ChevronLeftIcon color={'#000'} size={35} />
+        <ChevronLeftIcon color={'#000'} size={35} onPress={()=>{navigation.navigate("Home")}}/>
         <Text className="font-Medium text-lg text-black ">Options</Text>
         <BellAlertIcon color={'#000'} size={35} />
       </View>
