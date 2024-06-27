@@ -14,12 +14,16 @@ import {
   UserCircleIcon,
   CalendarDaysIcon,
   ChevronDownIcon,
+  EyeIcon,
+  EyeSlashIcon,
 } from 'react-native-heroicons/outline';
 import RadioGroup from 'react-native-radio-buttons-group';
 import DatePicker from 'react-native-date-picker';
 import {Item, Picker} from 'native-base';
 
 const Register = ({navigation}) => {
+  const [eyepass1, seteyepass1] = useState(false);
+  const [eyepass2, seteyepass2] = useState(false);
   const [dropvalue, setdropvalue] = useState(undefined);
   const [selectedId, setselectedId] = useState();
   const [date, setDate] = useState(new Date());
@@ -28,18 +32,27 @@ const Register = ({navigation}) => {
     () => [
       {
         id: 1, // acts as primary key, should be unique and non-empty string
-        label: <Text className="text-black text-lg mr-7">Male</Text>,
+        label: <Text className="text-black text-lg mr-7 font-Medium">Male</Text>,
         value: 1,
+        size: 17,
+        borderColor: '#d9d9d9',
+        color: '#098CE3',
       },
       {
         id: 2,
-        label: <Text className="text-black text-lg mr-7">Female</Text>,
+        label: <Text className="text-black text-lg mr-7 font-Medium">Female</Text>,
         value: 2,
+        size: 17,
+        borderColor: '#d9d9d9',
+        color: '#098CE3',
       },
       {
         id: 3,
-        label: <Text className="text-black text-lg ">Other</Text>,
+        label: <Text className="text-black text-lg font-Medium ">Other</Text>,
         value: 3,
+        size: 17,
+        borderColor: '#d9d9d9',
+        color: '#098CE3',
       },
     ],
     [],
@@ -289,11 +302,15 @@ const Register = ({navigation}) => {
         <View className="flex flex-row mx-5 items-center  border-x border-y rounded-lg border-[#098CE3]">
           <LockClosedIcon color="#098CE3" size={40} />
           <TextInput
-            className="border-l  w-64 border-[#098CE3] font-Regular   "
+            className="border-l w-56 border-[#098CE3] font-Regular   "
             placeholder="********"
             // onChangeText={setemail}
             // value={email}
+            secureTextEntry={!eyepass1}
+
           />
+          {eyepass1?(<EyeIcon  color="#098CE3" size={30} onPress={()=>{seteyepass1(!eyepass1)}}/>):(<EyeSlashIcon color="#098CE3" size={30} onPress={()=>{seteyepass1(!eyepass1)}}/>)}
+
         </View>
         
         <Text className="font-Medium text-black mx-6 mt-2 mb-2 text-base">
@@ -302,11 +319,14 @@ const Register = ({navigation}) => {
         <View className="flex flex-row mx-5 items-center  border-x border-y rounded-lg border-[#098CE3]">
           <LockClosedIcon color="#098CE3" size={40} />
           <TextInput
-            className="border-l  w-64 border-[#098CE3] font-Regular   "
+            className="border-l  w-56 border-[#098CE3] font-Regular   "
             placeholder="********"
             // onChangeText={setemail}
             // value={email}
+            secureTextEntry={!eyepass2}
+
           />
+          {eyepass2?(<EyeIcon color="#098CE3" size={30} onPress={()=>{seteyepass2(!eyepass2)}}/>):(<EyeSlashIcon color="#098CE3" size={30} onPress={()=>{seteyepass2(!eyepass2)}}/>)}
           </View>
           <TouchableOpacity className=" self-center mt-4 h-12 w-80 rounded-lg bg-buttons" onPress={() => {
             navigation.navigate('Login');

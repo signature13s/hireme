@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View,ScrollView} from 'react-native';
+import {StyleSheet, Text, View,ScrollView,TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import {
   ChevronLeftIcon,
@@ -9,6 +9,7 @@ import {
   ExclamationCircleIcon,
   UserIcon,
   ChevronUpIcon,
+  ArrowRightStartOnRectangleIcon,
 } from 'react-native-heroicons/outline';
 import {Image} from 'react-native-animatable';
 
@@ -101,6 +102,16 @@ const Profile = ({navigation}) => {
               </Text>
               <ChevronDownIcon color={'#000'} size={20} />
             </View>
+            <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Login');
+                  }}
+                  className="h-5 w-20 flex-row border-x border-y mt-10 border-red-700 self-center ">
+                  <ArrowRightStartOnRectangleIcon color="red" size={18} />
+                  <Text className="font-Regular text-red-700  ml-1">
+                    Logout
+                  </Text>
+                </TouchableOpacity>
           </ScrollView>
         ) : (
           <View className="flex flex-1">
@@ -134,7 +145,18 @@ const Profile = ({navigation}) => {
               </Text>
               <ChevronDownIcon color={'#000'} size={20} />
             </View>
+            <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Login');
+                  }}
+                  className="h-5 w-20 flex-row border-x border-y mt-10 border-red-700 self-center ">
+                  <ArrowRightStartOnRectangleIcon color="red" size={18} />
+                  <Text className="font-Regular text-red-700  ml-1">
+                    Logout
+                  </Text>
+                </TouchableOpacity>
           </View>
+          
         )}
       </View>
     </View>
