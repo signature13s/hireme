@@ -25,6 +25,10 @@ const NewPass = ({navigation}) => {
         source={require('../asset/Reset-password-bro.png')}
         resizeMode="contain"
       />
+       <View className=" bg-white h-40 w-full rounded-full  -z-10 absolute top-96 left-0 rotate-12"></View>
+      <View className=" bg-white h-40 w-full rounded-full  -z-10 absolute top-80 -left-10 rotate-12"></View>
+
+      <View className=" bg-white h-40 w-full rounded-full  -z-10 absolute top-80 left-20 rotate-12"></View>
       <View className="border-t-2 border-2 border-[#098CE3] mt-2 flex flex-2 bg-white h-4/5 w-full mx-20 rounded-3xl">
         <Text className="font-Medium text-black mx-6 mt-7 mb-2 text-base">
           New Password<Text className="text-red-700">*</Text>

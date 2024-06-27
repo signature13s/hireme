@@ -4,12 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
 import Onboarding1 from './component/Onboarding1';
 import Login from './component/Login';
-import Home from './component/Home';
 import Forgot from './component/Forgot';
 import Register from './component/Register';
 import Verifyotp from './component/Verifyotp';
 import NewPass from './component/NewPass';
 import Profile from './component/Profile';
+import Tabs from './component/Tabs';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
@@ -28,7 +28,7 @@ const App = () => {
    <NavigationContainer>
     <Stack.Navigator  initialRouteName="Login" screenOptions={{headerShown:false}}>
       <Stack.Screen name='Login' component={Login}/>
-      <Stack.Screen name='Home' component={Home}/>
+      <Stack.Screen name='Home' component={Tabs}/>
       <Stack.Screen name='Forgot' component={Forgot}/>
       <Stack.Screen name='Register' component={Register}/>
       <Stack.Screen name='Verifyotp' component={Verifyotp}/>
